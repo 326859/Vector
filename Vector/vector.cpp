@@ -1,12 +1,17 @@
-int* new_vector_int(int size)
-{
-    int* arr = new int (arr[size]);
-    return arr;
-}
+#include<vector.h>
 
-void delete_vector_int(int *arr, int size)
+void vector::concatenation(vector v1, vector v2)
 {
-    int a = sizeof(int);
-    for(int i = 0; i < size ;i++)
-        delete (arr + a * i);
+    Vector = new int [v1.size+v2.size];
+    size = v1.size + v2.size;
+
+    for(int i = 0; i < v1.size; i++)
+    {
+        Vector[i] = v1.Vector[i];
+    }
+
+    for(int i = 0; i < v2.size; i++)
+    {
+        Vector[v1.size + i] = v2.Vector[i];
+    }
 }

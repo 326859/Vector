@@ -3,9 +3,25 @@
 
 class vector
 {
+
 public:
-    int* new_vector_int(int);
-    void delete_vector_int(int*, int);
+
+    int size;
+    int *Vector;
+
+    /*vector(int size)
+    {
+        //Vector = new int arr[size];
+    }*/
+
+    ~vector()
+    {
+        delete Vector;
+    }
+
+public:
+
+    void concatenation(vector, vector);
 };
 
 #endif // VECTOR_H
