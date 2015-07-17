@@ -3,25 +3,30 @@
 
 class vector
 {
+private:
+
+    int *link;
+    int size;
 
 public:
 
-    int size;
-    int *Vector;
-
-    /*vector(int size)
+    vector()
     {
-        //Vector = new int arr[size];
-    }*/
+        size = 0;
+        link = new int [size + 1];
+    }
 
     ~vector()
     {
-        delete Vector;
+        delete link;
     }
 
 public:
 
-    void concatenation(vector, vector);
+    void pushBack(int);
+    void insert(int, int);
+    int get(int);
+    void all_cout();
 };
 
 #endif // VECTOR_H

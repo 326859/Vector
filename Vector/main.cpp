@@ -1,30 +1,23 @@
-#include <iostream>
-#include <vector.h>
+#include<iostream>
+#include<Vector.h>
 
 int main()
 {
+    vector debug;
+    debug.pushBack(8);
+    debug.pushBack(51);
+    debug.pushBack(42);
 
-    vector Vector1, Vector2, Vector3;
+    debug.all_cout();
 
-    Vector1.size = 5;
-    Vector2.size = 6;
+    debug.insert(1, 15);
 
-    Vector1.Vector = new int [Vector1.size];
-    Vector2.Vector = new int [Vector2.size];
+    std::cout << debug.get(3) << std::endl;
+    std::cout << debug.get(1) << std::endl;
 
-    Vector3.concatenation(Vector1,Vector2);
+    debug.all_cout();
 
-    for(int i = 0; i < Vector1.size; i++)
-        std::cout << Vector1.Vector[i] << ' ';
-    std::cout << std::endl;
-
-    for(int i = 0; i < Vector2.size; i++)
-        std::cout << Vector2.Vector[i] << ' ';
-    std::cout << std::endl;
-
-    for(int i = 0; i < Vector3.size; i++)
-        std::cout << Vector3.Vector[i] << ' ';
-    std::cout << std::endl;
+    //system("pause");
 
     return 0;
 }

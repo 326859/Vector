@@ -1,17 +1,40 @@
-#include<vector.h>
+#include<iostream>
+#include<Vector.h>
+#include<mem.h>
 
-void vector::concatenation(vector v1, vector v2)
+void vector::pushBack(int new_element)
 {
-    Vector = new int [v1.size+v2.size];
-    size = v1.size + v2.size;
+    int *p = new int[size+1];
 
-    for(int i = 0; i < v1.size; i++)
-    {
-        Vector[i] = v1.Vector[i];
-    }
+    memcpy((void*)p, (void*)link, sizeof(int)*size);
+    delete link;
+    link = p;
+    link[size] = new_element;
+    size++;
+}
 
-    for(int i = 0; i < v2.size; i++)
+void vector::insert(int position, int numb)
+{
+    if(position < size)
+        link[position] = numb;
+    else
+        std::cout << "ERROR: position > size" << std::endl;
+}
+
+int vector::get(int position)
+{
+    if(position < size)
+        return link[position];
+    else
     {
-        Vector[v1.size + i] = v2.Vector[i];
+        std::cout << "ERROR: position > size, return 0" << std::endl;
+        return 0;
     }
+}
+
+void vector::all_cout()
+{
+    for(int i = 0; i < size; i++)
+        std::cout << link[i] << ' ';
+    std::cout << std::endl;
 }
